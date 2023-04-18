@@ -15,7 +15,6 @@ func AverageLettersPerWord(text string) (float64, error) {
 	media := 0.0
 	for i := 0; i < len(partes); i++ {
 		if len(partes[i]) >= 2 {
-			fmt.Println(partes[i])
 			soma += float64(len(partes[i]))
 			contador++
 		}
