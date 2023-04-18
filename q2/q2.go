@@ -1,9 +1,7 @@
 package q2
 
 import (
-	"bufio"
 	"fmt"
-	"os"
 	"strings"
 )
 
