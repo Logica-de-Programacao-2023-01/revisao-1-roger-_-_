@@ -4,7 +4,7 @@ import "fmt"
 
 func CalculateDiscount(currentPurchase float64, purchaseHistory []float64) (float64, error) {
 	if currentPurchase == 0 {
-		fmt.Print("valor da compra inválido")
+		return 0, fmt.Errorf("valor da compra inválido")
 	}
 	var soma, media, resultado float64
 	for i := 0; i < len(purchaseHistory); i++ {
@@ -29,4 +29,3 @@ func CalculateDiscount(currentPurchase float64, purchaseHistory []float64) (floa
 	}
 	return resultado, nil
 }
-
