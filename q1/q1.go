@@ -18,7 +18,7 @@ func CalculateDiscount(currentPurchase float64, purchaseHistory []float64) (floa
 	media = soma / float64(len(purchaseHistory))
 
 	if len(purchaseHistory) == 0 {
-		resultado = currentPurchase * 0.9
+		resultado = currentPurchase * 0.1
 	}
 	if soma > 1000 {
 		resultado = currentPurchase * 0.1
