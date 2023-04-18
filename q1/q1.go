@@ -1,3 +1,5 @@
+package q1
+
 import "fmt"
 
 // Uma loja de roupas precisa de uma função para verificar
