@@ -10,9 +10,9 @@ func FindMinMaxAverage(numbers []int) (int, int, float64, error) {
 	men := 0
 	soma := 0
 	media := 0.0
+	mai = numbers[0]
+	men = numbers[0]
 	for i := 0; i < len(numbers); i++ {
-		mai = numbers[0]
-		men = numbers[0]
 		soma += numbers[i]
 		if mai < numbers[i] {
 			mai = numbers[i]
