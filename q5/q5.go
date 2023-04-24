@@ -6,7 +6,7 @@ func ConvertTemperature(temp float64, fromScale string, toScale string) (float64
 	var bases = []string{"C", "K", "F"}
 	para1 := 0
 	para2 := 0
-	for i := 0; i < 3; i++ {
+	for i := 0; i < len(bases); i++ {
 		if fromScale != bases[i] {
 			para1++
 		}
@@ -14,10 +14,10 @@ func ConvertTemperature(temp float64, fromScale string, toScale string) (float64
 			para2++
 		}
 	}
-	if para1 != 0 || len(fromScale) == 0 {
+	if para1 != 2 || len(fromScale) == 0 {
 		return 0, fmt.Errorf("escala inválida")
 	}
-	if para2 != 0 || len(toScale) == 0 {
+	if para2 != 2 || len(toScale) == 0 {
 		return 0, fmt.Errorf("escala inválida")
 	}
 
