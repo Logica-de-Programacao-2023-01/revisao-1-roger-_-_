@@ -6,19 +6,21 @@ import (
 )
 
 func AverageLettersPerWord(text string) (float64, error) {
-	if len(text)-int(strings.Count(text, " ")) == 0 {
+	caracteresp := []string{"@", "!", ".", ",", "#", "$", "%", "*", "1", "2", "3", "4", "5", "6", "7", "8", "9"}
+	for _, caracter := range caracteresp {
+		text = strings.ReplaceAll(text, caracter, "")
+	}
+
+	palavras := strings.Fields(text)
+
+	if len(palavras) == 0 {
 		return 0, fmt.Errorf("frase inexistente")
 	}
-	partes := strings.Split(text, " ")
-	soma := 0.0
-	contador := 0.0
-	media := 0.0
-	for i := 0; i < len(partes); i++ {
-		if len(partes[i]) >= 2 {
-			soma += float64(len(partes[i]))
-			contador++
-		}
+	total_letras := 0
+	for _, palavra := range palavras {
+		total_letras += len(palavra)
 	}
-	media = soma / contador
+	var media float64
+	media = float64(total_letras) / float64(len(palavras))
 	return media, nil
 }
